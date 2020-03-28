@@ -4,12 +4,13 @@
 #include <opencv2/imgcodecs.hpp>
 #include <opencv2/imgproc.hpp>
 #include <opencv2/highgui.hpp>
+#include <opencv2/features2d.hpp>
 #include "harrisDetector.h"
 
 
 int main()
 {
-    cv::Mat image = cv::imread("gay_yu.jpg",0);
+    cv::Mat image = cv::imread("church01.jpg",0);
 
     if(!image.data)
         return 0;
@@ -48,6 +49,26 @@ int main()
     //Display the corners
     cv::namedWindow("Corners");
     cv::imshow("Corners",image);
+
+    //Using GFTTDetector
+    std::vector<cv::KeyPoint> keypoints;
+    cv::Ptr<cv::GFTTDetector> ptrGFTT = cv::GFTTDetector::create(
+        500,
+        0.01,
+        10
+    );
+
+    ptrGFTT->detect(image,keypoints);
+
+    std::vector<cv::KeyPoint>::const_iterator it= keypoints.begin();
+    while(it!=keypoints.end()){
+
+        cv::circle(image,it->pt,3,cv::Scalar(255,255,255),1);
+        ++it;
+    }
+
+    cv::namedWindow("GFTT");
+    cv::imshow("GFTT",image);
     cv::waitKey(0);
     cv::destroyAllWindows();
 

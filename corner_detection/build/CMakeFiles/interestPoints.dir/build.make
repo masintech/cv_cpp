@@ -34,19 +34,19 @@ cmake_force:
 SHELL = /bin/sh
 
 # The CMake executable.
-CMAKE_COMMAND = /usr/local/Cellar/cmake/3.16.5/bin/cmake
+CMAKE_COMMAND = /usr/local/bin/cmake
 
 # The command to remove a file.
-RM = /usr/local/Cellar/cmake/3.16.5/bin/cmake -E remove -f
+RM = /usr/local/bin/cmake -E remove -f
 
 # Escaping for special characters.
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /Users/marcus/Documents/cv_cpp/corner_detection
+CMAKE_SOURCE_DIR = /home/david/cv_cpp/corner_detection
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /Users/marcus/Documents/cv_cpp/corner_detection/build
+CMAKE_BINARY_DIR = /home/david/cv_cpp/corner_detection/build
 
 # Include any dependencies generated for this target.
 include CMakeFiles/interestPoints.dir/depend.make
@@ -59,16 +59,16 @@ include CMakeFiles/interestPoints.dir/flags.make
 
 CMakeFiles/interestPoints.dir/interestPoints.cpp.o: CMakeFiles/interestPoints.dir/flags.make
 CMakeFiles/interestPoints.dir/interestPoints.cpp.o: ../interestPoints.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/marcus/Documents/cv_cpp/corner_detection/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/interestPoints.dir/interestPoints.cpp.o"
-	/usr/bin/clang++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/interestPoints.dir/interestPoints.cpp.o -c /Users/marcus/Documents/cv_cpp/corner_detection/interestPoints.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/david/cv_cpp/corner_detection/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/interestPoints.dir/interestPoints.cpp.o"
+	/usr/bin/clang++-9  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/interestPoints.dir/interestPoints.cpp.o -c /home/david/cv_cpp/corner_detection/interestPoints.cpp
 
 CMakeFiles/interestPoints.dir/interestPoints.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/interestPoints.dir/interestPoints.cpp.i"
-	/usr/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/marcus/Documents/cv_cpp/corner_detection/interestPoints.cpp > CMakeFiles/interestPoints.dir/interestPoints.cpp.i
+	/usr/bin/clang++-9 $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/david/cv_cpp/corner_detection/interestPoints.cpp > CMakeFiles/interestPoints.dir/interestPoints.cpp.i
 
 CMakeFiles/interestPoints.dir/interestPoints.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/interestPoints.dir/interestPoints.cpp.s"
-	/usr/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/marcus/Documents/cv_cpp/corner_detection/interestPoints.cpp -o CMakeFiles/interestPoints.dir/interestPoints.cpp.s
+	/usr/bin/clang++-9 $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/david/cv_cpp/corner_detection/interestPoints.cpp -o CMakeFiles/interestPoints.dir/interestPoints.cpp.s
 
 # Object files for target interestPoints
 interestPoints_OBJECTS = \
@@ -79,53 +79,49 @@ interestPoints_EXTERNAL_OBJECTS =
 
 interestPoints: CMakeFiles/interestPoints.dir/interestPoints.cpp.o
 interestPoints: CMakeFiles/interestPoints.dir/build.make
-interestPoints: /usr/local/opt/opencv@3/lib/libopencv_stitching.3.4.9.dylib
-interestPoints: /usr/local/opt/opencv@3/lib/libopencv_superres.3.4.9.dylib
-interestPoints: /usr/local/opt/opencv@3/lib/libopencv_videostab.3.4.9.dylib
-interestPoints: /usr/local/opt/opencv@3/lib/libopencv_aruco.3.4.9.dylib
-interestPoints: /usr/local/opt/opencv@3/lib/libopencv_bgsegm.3.4.9.dylib
-interestPoints: /usr/local/opt/opencv@3/lib/libopencv_bioinspired.3.4.9.dylib
-interestPoints: /usr/local/opt/opencv@3/lib/libopencv_ccalib.3.4.9.dylib
-interestPoints: /usr/local/opt/opencv@3/lib/libopencv_dnn_objdetect.3.4.9.dylib
-interestPoints: /usr/local/opt/opencv@3/lib/libopencv_dpm.3.4.9.dylib
-interestPoints: /usr/local/opt/opencv@3/lib/libopencv_face.3.4.9.dylib
-interestPoints: /usr/local/opt/opencv@3/lib/libopencv_freetype.3.4.9.dylib
-interestPoints: /usr/local/opt/opencv@3/lib/libopencv_fuzzy.3.4.9.dylib
-interestPoints: /usr/local/opt/opencv@3/lib/libopencv_hfs.3.4.9.dylib
-interestPoints: /usr/local/opt/opencv@3/lib/libopencv_img_hash.3.4.9.dylib
-interestPoints: /usr/local/opt/opencv@3/lib/libopencv_line_descriptor.3.4.9.dylib
-interestPoints: /usr/local/opt/opencv@3/lib/libopencv_optflow.3.4.9.dylib
-interestPoints: /usr/local/opt/opencv@3/lib/libopencv_reg.3.4.9.dylib
-interestPoints: /usr/local/opt/opencv@3/lib/libopencv_rgbd.3.4.9.dylib
-interestPoints: /usr/local/opt/opencv@3/lib/libopencv_saliency.3.4.9.dylib
-interestPoints: /usr/local/opt/opencv@3/lib/libopencv_sfm.3.4.9.dylib
-interestPoints: /usr/local/opt/opencv@3/lib/libopencv_stereo.3.4.9.dylib
-interestPoints: /usr/local/opt/opencv@3/lib/libopencv_structured_light.3.4.9.dylib
-interestPoints: /usr/local/opt/opencv@3/lib/libopencv_surface_matching.3.4.9.dylib
-interestPoints: /usr/local/opt/opencv@3/lib/libopencv_tracking.3.4.9.dylib
-interestPoints: /usr/local/opt/opencv@3/lib/libopencv_xfeatures2d.3.4.9.dylib
-interestPoints: /usr/local/opt/opencv@3/lib/libopencv_ximgproc.3.4.9.dylib
-interestPoints: /usr/local/opt/opencv@3/lib/libopencv_xobjdetect.3.4.9.dylib
-interestPoints: /usr/local/opt/opencv@3/lib/libopencv_xphoto.3.4.9.dylib
-interestPoints: /usr/local/opt/opencv@3/lib/libopencv_highgui.3.4.9.dylib
-interestPoints: /usr/local/opt/opencv@3/lib/libopencv_videoio.3.4.9.dylib
-interestPoints: /usr/local/opt/opencv@3/lib/libopencv_shape.3.4.9.dylib
-interestPoints: /usr/local/opt/opencv@3/lib/libopencv_phase_unwrapping.3.4.9.dylib
-interestPoints: /usr/local/opt/opencv@3/lib/libopencv_dnn.3.4.9.dylib
-interestPoints: /usr/local/opt/opencv@3/lib/libopencv_video.3.4.9.dylib
-interestPoints: /usr/local/opt/opencv@3/lib/libopencv_datasets.3.4.9.dylib
-interestPoints: /usr/local/opt/opencv@3/lib/libopencv_ml.3.4.9.dylib
-interestPoints: /usr/local/opt/opencv@3/lib/libopencv_plot.3.4.9.dylib
-interestPoints: /usr/local/opt/opencv@3/lib/libopencv_imgcodecs.3.4.9.dylib
-interestPoints: /usr/local/opt/opencv@3/lib/libopencv_objdetect.3.4.9.dylib
-interestPoints: /usr/local/opt/opencv@3/lib/libopencv_calib3d.3.4.9.dylib
-interestPoints: /usr/local/opt/opencv@3/lib/libopencv_features2d.3.4.9.dylib
-interestPoints: /usr/local/opt/opencv@3/lib/libopencv_flann.3.4.9.dylib
-interestPoints: /usr/local/opt/opencv@3/lib/libopencv_photo.3.4.9.dylib
-interestPoints: /usr/local/opt/opencv@3/lib/libopencv_imgproc.3.4.9.dylib
-interestPoints: /usr/local/opt/opencv@3/lib/libopencv_core.3.4.9.dylib
+interestPoints: /usr/lib/x86_64-linux-gnu/libopencv_shape.so.3.2.0
+interestPoints: /usr/lib/x86_64-linux-gnu/libopencv_stitching.so.3.2.0
+interestPoints: /usr/lib/x86_64-linux-gnu/libopencv_superres.so.3.2.0
+interestPoints: /usr/lib/x86_64-linux-gnu/libopencv_videostab.so.3.2.0
+interestPoints: /usr/lib/x86_64-linux-gnu/libopencv_aruco.so.3.2.0
+interestPoints: /usr/lib/x86_64-linux-gnu/libopencv_bgsegm.so.3.2.0
+interestPoints: /usr/lib/x86_64-linux-gnu/libopencv_bioinspired.so.3.2.0
+interestPoints: /usr/lib/x86_64-linux-gnu/libopencv_ccalib.so.3.2.0
+interestPoints: /usr/lib/x86_64-linux-gnu/libopencv_datasets.so.3.2.0
+interestPoints: /usr/lib/x86_64-linux-gnu/libopencv_dpm.so.3.2.0
+interestPoints: /usr/lib/x86_64-linux-gnu/libopencv_face.so.3.2.0
+interestPoints: /usr/lib/x86_64-linux-gnu/libopencv_freetype.so.3.2.0
+interestPoints: /usr/lib/x86_64-linux-gnu/libopencv_fuzzy.so.3.2.0
+interestPoints: /usr/lib/x86_64-linux-gnu/libopencv_hdf.so.3.2.0
+interestPoints: /usr/lib/x86_64-linux-gnu/libopencv_line_descriptor.so.3.2.0
+interestPoints: /usr/lib/x86_64-linux-gnu/libopencv_optflow.so.3.2.0
+interestPoints: /usr/lib/x86_64-linux-gnu/libopencv_plot.so.3.2.0
+interestPoints: /usr/lib/x86_64-linux-gnu/libopencv_reg.so.3.2.0
+interestPoints: /usr/lib/x86_64-linux-gnu/libopencv_saliency.so.3.2.0
+interestPoints: /usr/lib/x86_64-linux-gnu/libopencv_stereo.so.3.2.0
+interestPoints: /usr/lib/x86_64-linux-gnu/libopencv_structured_light.so.3.2.0
+interestPoints: /usr/lib/x86_64-linux-gnu/libopencv_surface_matching.so.3.2.0
+interestPoints: /usr/lib/x86_64-linux-gnu/libopencv_text.so.3.2.0
+interestPoints: /usr/lib/x86_64-linux-gnu/libopencv_ximgproc.so.3.2.0
+interestPoints: /usr/lib/x86_64-linux-gnu/libopencv_xobjdetect.so.3.2.0
+interestPoints: /usr/lib/x86_64-linux-gnu/libopencv_xphoto.so.3.2.0
+interestPoints: /usr/lib/x86_64-linux-gnu/libopencv_video.so.3.2.0
+interestPoints: /usr/lib/x86_64-linux-gnu/libopencv_viz.so.3.2.0
+interestPoints: /usr/lib/x86_64-linux-gnu/libopencv_phase_unwrapping.so.3.2.0
+interestPoints: /usr/lib/x86_64-linux-gnu/libopencv_rgbd.so.3.2.0
+interestPoints: /usr/lib/x86_64-linux-gnu/libopencv_calib3d.so.3.2.0
+interestPoints: /usr/lib/x86_64-linux-gnu/libopencv_features2d.so.3.2.0
+interestPoints: /usr/lib/x86_64-linux-gnu/libopencv_flann.so.3.2.0
+interestPoints: /usr/lib/x86_64-linux-gnu/libopencv_objdetect.so.3.2.0
+interestPoints: /usr/lib/x86_64-linux-gnu/libopencv_ml.so.3.2.0
+interestPoints: /usr/lib/x86_64-linux-gnu/libopencv_highgui.so.3.2.0
+interestPoints: /usr/lib/x86_64-linux-gnu/libopencv_photo.so.3.2.0
+interestPoints: /usr/lib/x86_64-linux-gnu/libopencv_videoio.so.3.2.0
+interestPoints: /usr/lib/x86_64-linux-gnu/libopencv_imgcodecs.so.3.2.0
+interestPoints: /usr/lib/x86_64-linux-gnu/libopencv_imgproc.so.3.2.0
+interestPoints: /usr/lib/x86_64-linux-gnu/libopencv_core.so.3.2.0
 interestPoints: CMakeFiles/interestPoints.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/Users/marcus/Documents/cv_cpp/corner_detection/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Linking CXX executable interestPoints"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/david/cv_cpp/corner_detection/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Linking CXX executable interestPoints"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/interestPoints.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.
@@ -138,6 +134,6 @@ CMakeFiles/interestPoints.dir/clean:
 .PHONY : CMakeFiles/interestPoints.dir/clean
 
 CMakeFiles/interestPoints.dir/depend:
-	cd /Users/marcus/Documents/cv_cpp/corner_detection/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /Users/marcus/Documents/cv_cpp/corner_detection /Users/marcus/Documents/cv_cpp/corner_detection /Users/marcus/Documents/cv_cpp/corner_detection/build /Users/marcus/Documents/cv_cpp/corner_detection/build /Users/marcus/Documents/cv_cpp/corner_detection/build/CMakeFiles/interestPoints.dir/DependInfo.cmake --color=$(COLOR)
+	cd /home/david/cv_cpp/corner_detection/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/david/cv_cpp/corner_detection /home/david/cv_cpp/corner_detection /home/david/cv_cpp/corner_detection/build /home/david/cv_cpp/corner_detection/build /home/david/cv_cpp/corner_detection/build/CMakeFiles/interestPoints.dir/DependInfo.cmake --color=$(COLOR)
 .PHONY : CMakeFiles/interestPoints.dir/depend
 

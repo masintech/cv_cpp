@@ -35,19 +35,19 @@ cmake_force:
 SHELL = /bin/sh
 
 # The CMake executable.
-CMAKE_COMMAND = /usr/local/Cellar/cmake/3.16.5/bin/cmake
+CMAKE_COMMAND = /usr/local/bin/cmake
 
 # The command to remove a file.
-RM = /usr/local/Cellar/cmake/3.16.5/bin/cmake -E remove -f
+RM = /usr/local/bin/cmake -E remove -f
 
 # Escaping for special characters.
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /Users/marcus/Documents/cv_cpp/corner_detection
+CMAKE_SOURCE_DIR = /home/david/cv_cpp/corner_detection
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /Users/marcus/Documents/cv_cpp/corner_detection/build
+CMAKE_BINARY_DIR = /home/david/cv_cpp/corner_detection/build
 
 #=============================================================================
 # Directory level rules for the build root directory
@@ -74,14 +74,14 @@ clean: CMakeFiles/interestPoints.dir/clean
 CMakeFiles/interestPoints.dir/all:
 	$(MAKE) -f CMakeFiles/interestPoints.dir/build.make CMakeFiles/interestPoints.dir/depend
 	$(MAKE) -f CMakeFiles/interestPoints.dir/build.make CMakeFiles/interestPoints.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/Users/marcus/Documents/cv_cpp/corner_detection/build/CMakeFiles --progress-num=1,2 "Built target interestPoints"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/david/cv_cpp/corner_detection/build/CMakeFiles --progress-num=1,2 "Built target interestPoints"
 .PHONY : CMakeFiles/interestPoints.dir/all
 
 # Build rule for subdir invocation for target.
 CMakeFiles/interestPoints.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /Users/marcus/Documents/cv_cpp/corner_detection/build/CMakeFiles 2
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/david/cv_cpp/corner_detection/build/CMakeFiles 2
 	$(MAKE) -f CMakeFiles/Makefile2 CMakeFiles/interestPoints.dir/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /Users/marcus/Documents/cv_cpp/corner_detection/build/CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/david/cv_cpp/corner_detection/build/CMakeFiles 0
 .PHONY : CMakeFiles/interestPoints.dir/rule
 
 # Convenience name for target.

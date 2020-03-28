@@ -6,18 +6,23 @@ project(interestPoints VERSION 0.1.0)
 
 # set minimum required version for cmake
 cmake_minimum_required(VERSION 2.8)
-set( PKG_CONFIG_PATH "/usr/lib/pkgconfig/" )
 
-find_package(OpenCV REQUIRED PATHS /usr/local/opt/opencv@3 NO_DEFAULT_PATH) # manual specification of the OpenCVConfig.cmake path is necessary since otherwise, cmake assigns /opt/local a higher priority and ocv2.4 will be used
+
+####FOR MAC#####
+# set( PKG_CONFIG_PATH "/usr/lib/pkgconfig/" )
+# find_package(OpenCV REQUIRED PATHS /usr/local/opt/opencv@3 NO_DEFAULT_PATH) # manual specification of the OpenCVConfig.cmake path is necessary since otherwise, cmake assigns /opt/local a higher priority and ocv2.4 will be used
+# find_library(${OpenCV_LIBS})
+
+# message(STATUS "OpenCV library status:")
+# message(STATUS "    config: ${OpenCV_DIR}")
+# message(STATUS "    version: ${OpenCV_VERSION}")
+# message(STATUS "    libraries: ${OpenCV_LIBS}")
+# message(STATUS "    include path: ${OpenCV_INCLUDE_DIRS}")
+
+###For ubuntu###
+find_package(OpenCV REQUIRED )
 
 find_library(${OpenCV_LIBS})
-
-message(STATUS "OpenCV library status:")
-message(STATUS "    config: ${OpenCV_DIR}")
-message(STATUS "    version: ${OpenCV_VERSION}")
-message(STATUS "    libraries: ${OpenCV_LIBS}")
-message(STATUS "    include path: ${OpenCV_INCLUDE_DIRS}")
-
 include_directories(${CMAKE_SOURCE_DIR}/include )
 # add executable
 add_executable( interestPoints interestPoints.cpp )

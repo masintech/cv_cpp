@@ -38,7 +38,7 @@
 				{
 					"directoryIndex" : 0,
 					"id" : "interestPoints::@6890427a1f51a3e7e1df",
-					"jsonFile" : "target-interestPoints-Debug-a9a463aa8f2bbbae3313.json",
+					"jsonFile" : "target-interestPoints-Debug-d3cd5b19d6c718de2cf3.json",
 					"name" : "interestPoints",
 					"projectIndex" : 0
 				}
@@ -48,8 +48,8 @@
 	"kind" : "codemodel",
 	"paths" : 
 	{
-		"build" : "/Users/marcus/Documents/cv_cpp/corner_detection/build",
-		"source" : "/Users/marcus/Documents/cv_cpp/corner_detection"
+		"build" : "/home/david/cv_cpp/corner_detection/build",
+		"source" : "/home/david/cv_cpp/corner_detection"
 	},
 	"version" : 
 	{

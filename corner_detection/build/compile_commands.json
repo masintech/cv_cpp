@@ -1,0 +1,7 @@
+[
+{
+  "directory": "/Users/marcus/Documents/cv_cpp/corner_detection/build",
+  "command": "/usr/bin/clang++   -I/Users/marcus/Documents/cv_cpp/corner_detection/include -isystem /usr/local/Cellar/opencv@3/3.4.9_2/include -isystem /usr/local/Cellar/opencv@3/3.4.9_2/include/opencv  -g -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.15.sdk   -o CMakeFiles/interestPoints.dir/interestPoints.cpp.o -c /Users/marcus/Documents/cv_cpp/corner_detection/interestPoints.cpp",
+  "file": "/Users/marcus/Documents/cv_cpp/corner_detection/interestPoints.cpp"
+}
+]

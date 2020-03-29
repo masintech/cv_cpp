@@ -200,4 +200,30 @@ int main()
     cv::imshow("SURF",featureImage);
 
 
-}
+    //SIFT:
+
+    // Read input image
+    image=cv::imread("chruch01.jpg",0);
+
+    // rotate the image
+    cv::transpose(image,image);
+    cv::fplit(image,image, 0);
+
+    keypoints.clear();
+    // Construct the SIFT feature detector object
+    cv::Ptr<cv::xfeatures2d::SiftFeatureDetector> ptrSIFT =cv::xfeatures2d::SiftFeatureDetector::create();
+    // detect the keypoints
+    ptrSIFT->detect(image, keypoints);
+
+    // Detect the SIFT features
+    ptrSIFT->detect(image,keypoints);
+
+    cv::drawKeypoints(image,keypoints, featureImage, cv::Scalar(255,255,255), cv::DrawMatchesFlags::DRAW_RICH_KEYPOINTS);
+
+    // Display the keypoints
+    cv::namedWindow("SIFT");
+    cv::imshow("SIFT", featureImage);
+
+    std::cout<<"Number of SIFT keypoints: "<<keypoints.size()<<std::endl;
+
+

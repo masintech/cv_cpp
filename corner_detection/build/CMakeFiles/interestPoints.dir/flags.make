@@ -6,5 +6,5 @@ CXX_FLAGS = -g
 
 CXX_DEFINES = 
 
-CXX_INCLUDES = -I/home/david/cv_cpp/corner_detection/include -isystem /usr/include/opencv 
+CXX_INCLUDES = -I/home/david/cv_cpp/corner_detection/include -isystem /usr/local/include/opencv 
 

@@ -5,6 +5,8 @@
 #include <opencv2/imgproc.hpp>
 #include <opencv2/highgui.hpp>
 #include <opencv2/features2d.hpp>
+#include <opencv2/xfeatures2d.hpp>
+
 #include "harrisDetector.h"
 
 
@@ -174,4 +176,28 @@ int main()
 
     cv::waitKey(0);
     cv::destroyAllWindows();
+
+    // SURF
+    image = cv::imread("church01.jpg",0);
+    // rotate the image
+    cv::transpose(image, image);
+    cv::flip(image,image,0);
+
+    keypoints.clear();
+    // Construct the SURF feature detector object
+    cv::Ptr<cv::xfeatures2d::SurfFeatureDetector> ptrSURF = cv::xfeatures2d::SurfFeatureDetector::create(2000.0);
+    // detect the SURF features
+    ptrSURF->detect(image, keypoints);
+
+    // Detect SURF features
+    ptrSURF->detect(image,keypoints);
+
+    cv::Mat featureImage;
+    cv::drawKeypoints(image, keypoints, featureImage, cv::Scalar(255,255,255), cv::DrawMatchesFlags::DRAW_RICH_KEYPOINTS);
+
+    //Display
+    cv::namedWindow("SURF");
+    cv::imshow("SURF",featureImage);
+
+
 }

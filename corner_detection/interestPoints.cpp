@@ -12,7 +12,7 @@
 
 int main()
 {
-    cv::Mat image = cv::imread("church01.jpg",0);
+    cv::Mat image = cv::imread("church00.jpg",0);
 
     if(!image.data)
         return 0;
@@ -77,7 +77,7 @@ int main()
     // FAST feature
     
     // Read input image
-    image= cv::imread("church01.jpg", 0);
+    image= cv::imread("church00.jpg", 0);
     // rotate the image
     cv::transpose(image, image);
     cv::flip(image,image,0);
@@ -96,7 +96,7 @@ int main()
 
     // FAST feature without non-max suppression
     // Read input image
-    image=cv::imread("church01.jpg",0);
+    image=cv::imread("church00.jpg",0);
     // rotate the image
     cv::transpose(image, image);
     cv::flip(image,image,0);
@@ -108,11 +108,11 @@ int main()
     // draw the keypoints
     cv::drawKeypoints(image,keypoints,image,cv::Scalar(255,255,255),cv::DrawMatchesFlags::DRAW_OVER_OUTIMG);
 
-    cv::namedWindow("FAST Features(all)");
+    cv::namedWindow("FAST Features(all) without non-max suppression");
     cv::imshow("FAST Features (all)", image);
 
     // Read input image
-    image = cv::imread("church01.jpg",0);
+    image = cv::imread("church00.jpg",0);
     // rotate the image
     cv::transpose(image, image);
     cv::flip(image,image,0);
@@ -167,6 +167,7 @@ int main()
             }
         
         }
+    
     // draw the keypoints
     cv::drawKeypoints(image, keypoints, image, cv::Scalar(255,255,255),cv::DrawMatchesFlags::DRAW_OVER_OUTIMG);
 
@@ -174,11 +175,10 @@ int main()
     cv::namedWindow("FAST Features (grid)");
     cv::imshow("FAST Features (grid)", image);
 
-    cv::waitKey(0);
-    cv::destroyAllWindows();
+    
 
     // SURF
-    image = cv::imread("church01.jpg",0);
+    image = cv::imread("church00.jpg",0);
     // rotate the image
     cv::transpose(image, image);
     cv::flip(image,image,0);
@@ -203,11 +203,11 @@ int main()
     //SIFT:
 
     // Read input image
-    image=cv::imread("chruch01.jpg",0);
+    image=cv::imread("church00.jpg",0);
 
     // rotate the image
     cv::transpose(image,image);
-    cv::fplit(image,image, 0);
+    cv::flip(image,image, 0);
 
     keypoints.clear();
     // Construct the SIFT feature detector object
@@ -227,3 +227,30 @@ int main()
     std::cout<<"Number of SIFT keypoints: "<<keypoints.size()<<std::endl;
 
 
+    // BRISK;
+
+    image=cv::imread("church00.jpg",0);
+    cv::transpose(image, image);
+	cv::flip(image, image, 0);
+
+    keypoints.clear();
+
+    cv::Ptr<cv::BRISK> ptrBRISK = cv::BRISK::create(
+        60, // threshold for BRISK point to be accpeted
+        5 //# of octaves
+    );
+
+    // Detect the BRISK features
+    ptrBRISK->detect(image, keypoints);
+
+    cv::drawKeypoints(image, keypoints, featureImage, cv::Scalar(255,255,255), cv::DrawMatchesFlags::DRAW_RICH_KEYPOINTS);
+    // Display the keypoints
+	cv::namedWindow("BRISK");
+	cv::imshow("BRISK", featureImage);
+    std::cout<<"Number of BRISK keypoints: "<<keypoints.size()<<std::endl;
+    cv::waitKey(0);
+    cv::destroyAllWindows();
+}
+
+
+//

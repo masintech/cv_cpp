@@ -1,5 +1,0 @@
-/home/david/cv_cpp/corner_detection/build/CMakeFiles/rebuild_cache.dir
-/home/david/cv_cpp/corner_detection/build/CMakeFiles/interestPoints.dir
-/home/david/cv_cpp/corner_detection/build/CMakeFiles/package.dir
-/home/david/cv_cpp/corner_detection/build/CMakeFiles/package_source.dir
-/home/david/cv_cpp/corner_detection/build/CMakeFiles/edit_cache.dir

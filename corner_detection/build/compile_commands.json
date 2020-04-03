@@ -1,7 +1,0 @@
-[
-{
-  "directory": "/home/david/cv_cpp/corner_detection/build",
-  "command": "/usr/bin/clang++-9   -I/home/david/cv_cpp/corner_detection/include -isystem /usr/local/include/opencv  -g   -o CMakeFiles/interestPoints.dir/interestPoints.cpp.o -c /home/david/cv_cpp/corner_detection/interestPoints.cpp",
-  "file": "/home/david/cv_cpp/corner_detection/interestPoints.cpp"
-}
-]

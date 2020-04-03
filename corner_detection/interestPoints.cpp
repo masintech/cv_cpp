@@ -248,6 +248,34 @@ int main()
 	cv::namedWindow("BRISK");
 	cv::imshow("BRISK", featureImage);
     std::cout<<"Number of BRISK keypoints: "<<keypoints.size()<<std::endl;
+    
+
+
+    //ORB
+
+    image=cv::imread("church00.jpg",0);
+    cv::transpose(image, image);
+	cv::flip(image, image, 0);
+
+    keypoints.clear();
+    // Consttruct the BRISK feature detector obkect
+    cv::Ptr<cv::ORB> ptrORB = cv::ORB::create(
+        75, // total number of keypoints
+        1.2,    // scale factor between layers
+        8 // number of layers in pyramid
+    );
+    // detetct the keypoints
+    ptrORB->detect(image, keypoints);
+
+
+    cv::drawKeypoints(image, keypoints, featureImage, cv::Scalar(255,255,255), cv::DrawMatchesFlags::DRAW_RICH_KEYPOINTS);
+
+    // Display
+    cv::namedWindow("ORB");
+    cv::imshow("ORB", featureImage);
+    std::cout<<"Number of ORB keypoints: "<<keypoints.size()<<std::endl;
+
+
     cv::waitKey(0);
     cv::destroyAllWindows();
 }

@@ -76,7 +76,42 @@ int main()
 
 	std::cout << "Number of matches: " << matches.size() << std::endl; 
 
+    // perform the ratio test
+
+    // find the beest two matches of each keypoint
+    std::vector<std::vector<cv::DMatch>> matches2;
+    matcher.knnMatch(descriptors1,descriptors2,
+    matches2,
+    2); // find the k(2) best matches
+    matches.clear();
+
+    // perform ratio test
+    double ratioMax=0.6;
+    std::vector<std::vector<cv::DMatch>>::iterator it;
+    for(it=matches2.begin(); it!=matches2.end(); ++it){
+        // first best match/second best match
+        if ((*it)[0].distance/(*it)[1].distance<ratioMax){
+            matches.emplace_back((*it)[0]);
+        }
+    }
+    // matches is the new match set
+
+    cv::drawMatches(
+        image1, keypoints1,
+        image2, keypoints2,
+        matches,  // the matches
+        imageMatches, // the image produced
+        cv::Scalar(255,255,255), //color of lines
+        cv::Scalar(255,255,255), // color of points
+        std::vector<char>(), // masks if any
+        cv::DrawMatchesFlags::NOT_DRAW_SINGLE_POINTS | cv::DrawMatchesFlags::DRAW_RICH_KEYPOINTS);
     
+
+    // Display the image of matches
+    cv::namedWindow("SURF Matches (ratio test at 0.6)");
+	cv::imshow("SURF Matches (ratio test at 0.6)",imageMatches);
+
+
 
 
 

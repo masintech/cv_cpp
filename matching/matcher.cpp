@@ -110,7 +110,32 @@ int main()
     // Display the image of matches
     cv::namedWindow("SURF Matches (ratio test at 0.6)");
 	cv::imshow("SURF Matches (ratio test at 0.6)",imageMatches);
+    
+    // radius match
+    float maxDist = 0.3;
+    matches2.clear();
+    matcher.radiusMatch(descriptors1, descriptors2, matches2,
+                     maxDist); // maximum acceptable distance
+                              // between the 2 descriptors
 
+    cv::drawMatches(
+            image1, keypoints1,
+            image2, keypoints2,
+            matches2,  // the matches
+            imageMatches, // the image produced
+            cv::Scalar(255, 255, 255),  // color of lines
+		    cv::Scalar(255, 255, 255),  // color of points
+            std::vector<std::vector<char>>(), //masks if any
+            cv::DrawMatchesFlags::NOT_DRAW_SINGLE_POINTS | cv::DrawMatchesFlags::DRAW_RICH_KEYPOINTS
+    );      
+
+    int nmatches = 0;
+    for (int i =0; i <matches2.size();i++) nmatches += matches2[i].size();                  
+    std::cout<<" Number of matches (with max radius): "<<nmatches<<std::endl;
+
+    // Display the image of matches
+	cv::namedWindow("SURF Matches (with max radius)");
+	cv::imshow("SURF Matches (with max radius)", imageMatches);
 
 
 

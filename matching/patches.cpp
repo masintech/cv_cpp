@@ -44,7 +44,7 @@ int main()
 	for (int i=0; i<keypoints1.size(); i++) {
 	
 		// define image patch
-		neighborhood.x = keypoints1[i].pt.x-nsize/2;
+		neighborhood.x = keypoints1[i].pt.x-nsize/2;// top left coordinate
 		neighborhood.y = keypoints1[i].pt.y-nsize/2;
 
 		// if neighborhood of points outside image, then continue with next point

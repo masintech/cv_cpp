@@ -30,12 +30,12 @@ message(STATUS "    include path: ${OpenCV_INCLUDE_DIRS}")
 
 # add executable
 add_executable( patches patches.cpp )
-# add_executable( matcher matcher.cpp )
+add_executable( matcher matcher.cpp )
 # add_executable( binaryDescriptors binaryDescriptors.cpp )
 
 # link libraries
 target_link_libraries( patches ${OpenCV_LIBS} )
-# target_link_libraries( matcher ${OpenCV_LIBS} )
+target_link_libraries( matcher ${OpenCV_LIBS} )
 # target_link_libraries( binaryDescriptors ${OpenCV_LIBS} )
 
 

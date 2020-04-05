@@ -29,9 +29,11 @@ find_library(${OpenCV_LIBS})
 include_directories(${CMAKE_SOURCE_DIR}/include )
 # add executable
 add_executable( estimateF estimateF.cpp )
+add_executable( robustmatching robustmatching.cpp )
 
 # link libraries
 target_link_libraries( estimateF ${OpenCV_LIBS})
+target_link_libraries( robustmatching ${OpenCV_LIBS})
 
 # copy required images to every directory with executable
 # SET (IMAGES ${CMAKE_SOURCE_DIR}/images/bike.avi)

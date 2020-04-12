@@ -1,6 +1,6 @@
 cmake_minimum_required(VERSION 3.0.0)
 set (CMAKE_CXX_STANDARD 11)
-project(projection VERSION 0.1.0)
+project(interestPoints VERSION 0.1.0)
 
 # cmake for OpenCV 3 – Advanced topics in CVAP - Section01
 # your opencv/build directory should be in your system PATH
@@ -28,16 +28,10 @@ message(STATUS "    include path: ${OpenCV_INCLUDE_DIRS}")
 find_library(${OpenCV_LIBS})
 include_directories(${CMAKE_SOURCE_DIR}/include )
 # add executable
-add_executable( estimateF estimateF.cpp )
-add_executable( estimateH estimateH.cpp )
-add_executable( robustmatching robustmatching.cpp )
-add_executable( targetmatching matchingTarget.cpp)
+add_executable( interestPoints interestPoints.cpp )
 
 # link libraries
-target_link_libraries( estimateF ${OpenCV_LIBS})
-target_link_libraries( estimateH ${OpenCV_LIBS})
-target_link_libraries( robustmatching ${OpenCV_LIBS})
-target_link_libraries( targetmatching ${OpenCV_LIBS})
+target_link_libraries( interestPoints ${OpenCV_LIBS})
 
 # copy required images to every directory with executable
 # SET (IMAGES ${CMAKE_SOURCE_DIR}/images/bike.avi)

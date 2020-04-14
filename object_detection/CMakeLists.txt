@@ -28,9 +28,11 @@ message(STATUS "    include path: ${OpenCV_INCLUDE_DIRS}")
 
 # add executable
 add_executable( detectObjects detectObjects.cpp )
+add_executable( recognizeFace recognizeFace.cpp )
 
 # link libraries
 target_link_libraries( detectObjects ${OpenCV_LIBS})
+target_link_libraries( recognizeFace ${OpenCV_LIBS})
 
 # copy required images to every directory with executable
 # SET (IMAGES ${CMAKE_SOURCE_DIR}/images/bike.avi)

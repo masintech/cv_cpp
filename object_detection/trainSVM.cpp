@@ -85,7 +85,7 @@ int main()
 
     cv::HOGDescriptor hog(cv::Size((image.cols/16)*16, (image.rows/16)*16),//size of the window
         cv::Size(16,16),   // block size
-        cv::Size(16,16),  // block stride
+        cv::Size(4,4),  // block stride
         cv::Size(4,4),    // cell size
         9);             // number of bins
 

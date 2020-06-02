@@ -7,12 +7,35 @@
 #include <opencv2/imgproc.hpp>
 #include <opencv2/highgui.hpp>
 #include <opencv2/features2d.hpp>
+#include <opencv2/core/ocl.hpp>
 
 #include "CameraCalibrator.h"
-
+using namespace std;
 
 int main()
 {
+    cv::ocl::setUseOpenCL(true);
+    if (!cv::ocl::haveOpenCL())
+    {
+        cout << "OpenCL is not avaiable..." << endl;
+    }
+    cv::ocl::Context context;
+    if (!context.create(cv::ocl::Device::TYPE_GPU))
+    {
+        cout << "Failed creating the context..." << endl;
+    }
+
+    // In OpenCV 3.0.0 beta, only a single device is detected.
+    cout << context.ndevices() << " GPU devices are detected." << endl;
+    for (int i = 0; i < context.ndevices(); i++)
+    {
+        cv::ocl::Device device = context.device(i);
+        cout << "name                 : " << device.name() << endl;
+        cout << "available            : " << device.available() << endl;
+        cout << "imageSupport         : " << device.imageSupport() << endl;
+        cout << "OpenCL_C_Version     : " << device.OpenCL_C_Version() << endl;
+        cout << endl;
+    }
     cv::Mat image;
 	std::vector<std::string> filelist;
 
@@ -38,7 +61,7 @@ int main()
 		boardSize, "Detected points");	// size of chessboard
    
     // calibrate the camera
-    cameraCalibrator.setCalibrationFlag(true,true);
+    // cameraCalibrator.setCalibrationFlag(true,true);
 	cameraCalibrator.calibrate(image.size());
 
     // Example of Image Undistortion

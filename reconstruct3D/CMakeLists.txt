@@ -11,13 +11,13 @@ find_library(${OpenCV_LIBS})
 # add executable
 add_executable( calibrate calibrate.cpp CameraCalibrator.cpp)
 # add_executable( cameraPose cameraPose.cpp)
-# add_executable( estimateE estimateE.cpp triangulate.cpp)
+add_executable( estimateE estimateE.cpp triangulate.cpp)
 # add_executable( stereoMatcher stereoMatcher.cpp)
 
 # link libraries
 target_link_libraries( calibrate ${OpenCV_LIBS})
 # target_link_libraries( cameraPose ${OpenCV_LIBS})
-# target_link_libraries( estimateE ${OpenCV_LIBS})
+target_link_libraries( estimateE ${OpenCV_LIBS})
 # target_link_libraries( stereoMatcher ${OpenCV_LIBS})
 
 # copy required images to every directory with executable

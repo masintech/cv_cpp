@@ -1,4 +1,5 @@
 #include "CameraCalibrator.h"
+#include <opencv2/core/ocl.hpp>
 
 
 int CameraCalibrator::addChessboardPoints(
@@ -110,6 +111,15 @@ cv::Mat CameraCalibrator::remap(const cv::Mat &image, cv::Size &outputSize) {
     if(mustInitUndistort){ // called once peer calibration
 
         cv::initUndistortRectifyMap(
+        cameraMatrix,   // computed camera matrix
+        distCoeffs,     // computed distortion matrix
+        cv::Mat(),     // optional rectification (none)
+        cv::Mat(),    // camera matrix to generate undistorted
+        outputSize,    // size of undistorted
+        CV_32FC1,    // type of output map
+        map1,map2    // the x and y mapping functions
+        );
+        cv::ocl::remap(
         cameraMatrix,   // computed camera matrix
         distCoeffs,     // computed distortion matrix
         cv::Mat(),     // optional rectification (none)
